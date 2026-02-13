@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Do You Love Me</title>
+<style>
+  body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#ffe6f0;
+    font-family:Arial, sans-serif;
+    flex-direction:column;
+  }
+  h1 { margin-bottom:30px; }
+  .box { position:relative; }
+  button {
+    padding:12px 25px;
+    font-size:18px;
+    margin:10px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+  }
+  #yes { background:#ff4d88; color:white; }
+  #no { position:absolute; background:#ccc; }
+</style>
+</head>
+<body>
+
+<h1>Do you love me? ❤️</h1>
+
+<div class="box">
+  <button id="yes" onclick="nextPage()">Yes</button>
+  <button id="no">No</button>
+</div>
+
+<script>
+let scale = 1;
+const yes = document.getElementById("yes");
+const no = document.getElementById("no");
+
+no.addEventListener("mouseover", () => {
+  const x = Math.random()*200-100;
+  const y = Math.random()*200-100;
+  no.style.transform = `translate(${x}px, ${y}px)`;
+  scale += 0.1;
+  yes.style.transform = `scale(${scale})`;
+});
+
+function nextPage(){
+  window.location.href = "valentine.html";
+}
+</script>
+
+</body>
+</html>
